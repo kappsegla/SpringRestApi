@@ -2,15 +2,17 @@ package com.example.demo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class ListStorage implements Storage{
 
-    ArrayList<Person> customers = new ArrayList<>();
+    List<Person> customers = new CopyOnWriteArrayList<>();
 
     public ListStorage(){
         //Läs in sparade kunder från fil
